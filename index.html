@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar__top">
+            <div class="navbar__left">
+                <img src="assets/image.png" alt="Amazon Logo" class="navbar__logo">
+                <div class="navbar__location" id="location" onclick="ShowLocation()">
+                    <span>Deliver to</span>
+                    <strong>Uzbekistan</strong>
+                </div>
+            </div>
+            <div class="navbar__center">
+                <div class="navbar__search">
+                    <select class="navbar__dropdown">
+                        <option value="all">All</option>
+
+                    </select>
+                    <input type="text" class="navbar__search-input" placeholder="Search Amazon.co.uk">
+                    <button class="navbar__search-button">
+                        <img src="assets/search (2).png" alt="Search">
+                    </button>
+                </div>
+            </div>
+            <div class="navbar__right">
+                <div class="navbar__account">
+                    <span>Hello, sign in</span>
+                    <strong>Account & Lists</strong>
+                </div>
+                <div class="navbar__returns">
+                    <span>Returns</span>
+                    <strong>& Orders</strong>
+                </div>
+                <div class="navbar__cart">
+                    <img src="cart-icon.png" alt="Cart">
+                    <span>Basket</span>
+                </div>
+            </div>
+        </div>
+        <div class="navbar__bottom">
+            <nav class="navbar__links">
+                <a href="#" onclick="showMenu()">All</a>
+                <a href="#">Best Sellers</a>
+                <a href="#">New Releases</a>
+                <a href="#">Today's Deals</a>
+                <a href="#">Books</a>
+                <a href="#">Gift Cards & Top Up</a>
+                <a href="#">Home & Garden</a>
+                <a href="#">Electronics</a>
+                <a href="#">Toys & Games</a>
+                <a href="#">Fashion</a>
+                <a href="#">Beauty</a>
+                <a href="#">PC & Video Games</a>
+                <a href="#">Pet Supplies</a>
+                <a href="#">PC</a>
+                <a href="#">Health & Personal Care</a>
+                <a href="#">Car & Motorbike</a>
+                <a href="#">Baby</a>
+                <a href="#">Shopper Toolkit</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero__content">
+            <h2>Explore Amazon Basic</h2>
+        </div>
+    </section>
+
+    <section class="cards">
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>Home & Kitchen</h3>
+                <img src="assets/image copy.png" alt="Home & Kitchen">
+                <a href="#">See more</a>
+            </div>
+            <div class="grid-item new">
+                <h3>Toys & Games</h3>
+                <img src="assets/toys.jpg" alt="Toys & Games">
+                <a href="#">See more</a>
+            </div>
+            <div class="grid-item">
+                <h3>Amazon Basics</h3>
+                <img src="assets/basics.jpg" alt="Amazon Basics">
+                <a href="#">Discover now</a>
+            </div>
+            <div class="grid-item">
+                <img src="assets/image copy 2.png" alt="">
+                <h3>Peace of mind with every international order</h3>
+                <a href="#">Click here to learn more</a>
+            </div>
+            <div class="grid-item">
+                <h3>Learning & Developmental Toys</h3>
+                <img src="assets/learning.png" alt="Home & Kitchen">
+                <a href="#">See more</a>
+            </div>
+            <div class="grid-item new">
+                <h3>Sports</h3>
+                <img src="assets/sports.png" alt="Toys & Games">
+                <a href="#">See more</a>
+            </div>
+            <div class="grid-item">
+                <h3>Pet Care</h3>
+                <img src="assets/petcare.png" alt="Amazon Basics">
+                <a href="#">Discover now</a>
+            </div>
+            <div class="grid-item">
+                <h3>Fasbion For All</h3>
+                <img src="assets/fashion.png" alt="Amazon Basics">
+                <a href="#">Discover now</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="deliver" id="deliver">
+        <div class="loading-spinner">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="location">
+            <h2>Choose your location</h2>
+            <span onclick="CloseLocation()">&#10005;</span>
+        </div>
+        <p>Delivery options and delivery speeds may vary for different locations</p>
+        <button class="deliver__btn">Sign in to see your address</button>
+        <p class="note">or enter UK mainland postcode</p>
+        <div class="deliver__input">
+            <input type="text">
+            <button class="input__btn">Apply</button>
+            <p class="note">or</p>
+            <option value="uzb">Uzbekistan</option>
+        </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span>Hello, sign in</span>
+            <button id="close-btn" class="close-btn" onclick="closeMenu()">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><strong>Digital Content & Devices</strong></li>
+            <li><a href="#">Prime Video</a></li>
+            <li><a href="#">Amazon Music</a></li>
+            <li><a href="#">Apps for Android</a></li>
+            <li><a href="#">Echo, Alexa & Smart Home</a></li>
+            <li><a href="#">Fire TV</a></li>
+            <li><a href="#">Fire Tablets</a></li>
+            <li><a href="#">Kindle E-readers & Books</a></li>
+            <li><strong>Shop By Department</strong></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Films, TV, Music & Games</a></li>
+            <li><a href="#">Electronics & Computers</a></li>
+            <li><a href="#">Home, Garden, Pets & DIY</a></li>
+            <li><a href="#">See All</a></li>
+            <li><strong>Programs & Features</strong></li>
+            <li><a href="#">Gift Cards & Top Up</a></li>
+            <li><a href="#">Find a Gift</a></li>
+            <li><a href="#">Handmade</a></li>
+            <li><a href="#">New Finds</a></li>
+        </ul>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

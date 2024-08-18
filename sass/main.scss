@@ -1,0 +1,458 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EAEDED;
+}
+
+a {
+    color: #0066C0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+// Navbar styles
+.navbar {
+    background-color: #131A22;
+    color: #FFFFFF;
+
+    &__location{
+        cursor: pointer;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        align-items: center;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    &__location {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    &__center {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+
+    &__search {
+        display: flex;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    &__dropdown {
+        padding: 5px;
+        border: 1px solid #888;
+        border-right: none;
+    }
+
+    &__search-input {
+        flex: 1;
+        padding: 5px;
+        border: 1px solid #888;
+        border-left: none;
+        font-size: 14px;
+    }
+
+    &__search-button {
+        padding: 5px 10px;
+        background-color: #F3A847;
+        border: 1px solid #888;
+        cursor: pointer;
+    }
+
+    &__search-button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__account, &__returns, &__cart {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    &__account strong, &__returns strong {
+        display: block;
+        font-size: 16px;
+    }
+
+    &__cart {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__cart img {
+        width: 24px;
+    }
+
+    &__bottom {
+        background-color: #232F3E;
+        padding: 10px 20px;
+    }
+
+    &__links {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    &__links a {
+        color: #FFFFFF;
+        font-size: 14px;
+    }
+}
+
+// Hero Section styles
+.hero {
+    background-color: #F3F3F3;
+    padding: 20px;
+    text-align: center;
+
+    &__content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+        color: #111;
+    }
+}
+
+// Cards Section styles
+.cards {
+    padding: 20px;
+    background-color: #f2f2f2;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .grid-item {
+        background-color: #FFFFFF;
+        border: 1px solid #DDD;
+        padding: 16px;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+        h3 {
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #111;
+        }
+
+        img {
+            max-width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .sign-in-button {
+            background-color: #FFD814;
+            border: 1px solid #FCD200;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #0F1111;
+            cursor: pointer;
+        }
+
+        .sign-in-button:hover {
+            background-color: #F7CA00;
+        }
+
+        a {
+            font-size: 14px;
+            color: #0066C0;
+        }
+    }
+    
+}
+
+// media
+@media (max-width: 1024px) {
+    .navbar__search {
+        max-width: 80%;
+    }
+
+    .navbar__right {
+        gap: 10px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .grid-item {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar__center {
+        display: none;
+    }
+
+    .navbar__logo {
+        margin-right: 5px;
+    }
+
+    .navbar__top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__bottom {
+        padding: 8px;
+    }
+
+    .navbar__links {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .hero {
+        padding: 15px;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
+// Navbar items hover effect
+.navbar__links a,
+.navbar__right a {
+    position: relative;
+    transition: color 0.8s ease-in-out;
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:hover::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition: width 0.3s ease-in-out;
+    }
+}
+
+button, 
+.sign-in-button {
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+
+    &:hover {
+        border-color: #fff;
+    }
+}
+
+
+.grid-item {
+    position: relative;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease-in-out;
+
+    &:hover {
+        border-color: #fff;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h3 {
+        transition: color 0.3s ease-in-out;
+    }
+
+    &:hover h3 {
+        color: #fff;
+    }
+}
+
+.deliver{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    flex-direction: column;
+    background-color: white;
+    width: 370px;
+    height: 350px;
+    padding: 0 30px;
+    .location{
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span{
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+    &__btn{
+        padding: 8px;
+        border-radius: 8px;
+        background-color: rgb(196, 196, 0);
+        font-weight: 550;
+        width: 100%;
+        cursor: pointer;
+    }
+    &__input{
+        input{
+            padding: 7px;
+            width: 70%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+        button{
+            border: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            padding: 10px 25px;
+            border-radius: 20px;
+        }
+    }
+}
+.note{
+    text-align: center;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        margin-bottom: 20px;
+        font-size: 18px;
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+
+    .sidebar-menu {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #444;
+
+            a {
+                color: white;
+                text-decoration: none;
+                display: block;
+            }
+
+            strong {
+                display: block;
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .navbar__left {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar__search {
+        width: 100%;
+    }
+
+    .navbar__search-input {
+        font-size: 12px;
+    }
+
+    .navbar__right {
+        display: none;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item {
+        padding: 8px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    .sign-in-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
